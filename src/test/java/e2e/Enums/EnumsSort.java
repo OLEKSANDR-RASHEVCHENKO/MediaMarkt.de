@@ -1,5 +1,8 @@
 package e2e.Enums;
 
+import lombok.Getter;
+
+@Getter
 public enum EnumsSort {
     BESTEERGEBNISSE("Beste Ergebnisse"),
     PREISAUFSTEIG("Preis: aufsteigend"),
