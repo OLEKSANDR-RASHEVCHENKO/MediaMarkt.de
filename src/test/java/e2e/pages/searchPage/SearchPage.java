@@ -1,9 +1,10 @@
-package e2e.pages;
+package e2e.pages.searchPage;
 
 import e2e.Enums.EnumsItemsNumberToDislikeOnSearchPage;
 import e2e.Enums.EnumsItemsNumberToLikeOnSearchPage;
 import e2e.Enums.EnumsItemsTitlesOnSearchPage;
 import e2e.Enums.EnumsSort;
+import e2e.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class SearchPage extends BasePage{
+public class SearchPage extends BasePage {
 
     public SearchPage(WebDriver driver) {
         super(driver);
@@ -32,6 +33,8 @@ public class SearchPage extends BasePage{
     WebElement likeButton;
     @FindBy(xpath = "//*[@aria-label='Von der Wunschliste entfernen']")
     WebElement dislikeButton;
+    @FindBy(xpath = "//*[@data-test='styled-logo']")
+    WebElement homeButton;
     public void chooseItemsToLikeOnSearchPage(EnumsItemsNumberToLikeOnSearchPage enumsItemsNumberOfSearchPage){
         WebElement chooseItemsToLike = driver.findElement(By.xpath(enumsItemsNumberOfSearchPage.getListOfItemsNumber()));
         chooseItemsToLike.click();
@@ -44,8 +47,9 @@ public class SearchPage extends BasePage{
         WebElement getItem = driver.findElement(By.xpath(enumsItemsTitlesOnSearchPage.getItemTitleXPath()));
         return  getItem.getText();
     }
-
-
+    public void clickOnHomeButton(){
+        homeButton.click();
+    }
 
     public void waitForLoading(){
         getWait().forVisibility(suchErgebnisseHeader);

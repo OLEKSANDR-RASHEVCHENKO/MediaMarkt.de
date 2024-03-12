@@ -18,7 +18,7 @@ public class HomePage extends BasePage {
     WebElement logo;
     @FindBy(xpath = "//*[@class='sc-c5b05e03-0 jchEGK sc-500fea2d-0 bHRFdb']")
     WebElement headerOnStartPage;
-    @FindBy(xpath = "//*[text()='OR']")
+    @FindBy(xpath = "//*[@data-test='myaccount-dropdown-button']")
     WebElement myAccountDropDownButton;
     @FindBy(xpath = "//*[@id='mms-app-header-category-button']")
     WebElement alleKategorienButton;

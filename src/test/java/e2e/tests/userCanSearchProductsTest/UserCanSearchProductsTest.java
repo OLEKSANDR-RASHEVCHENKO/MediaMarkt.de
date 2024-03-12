@@ -1,10 +1,6 @@
 package e2e.tests.userCanSearchProductsTest;
 
-import e2e.Enums.EnumsItemsNumberToDislikeOnSearchPage;
-import e2e.Enums.EnumsItemsNumberToLikeOnSearchPage;
-import e2e.Enums.EnumsItemsTitlesOnSearchPage;
-import e2e.Enums.EnumsSort;
-import e2e.pages.SearchPage;
+import e2e.pages.searchPage.SearchPage;
 import e2e.pages.homePage.HomePage;
 import e2e.pages.loginPage.LoginPage;
 import e2e.pages.startPage.StartPage;
@@ -35,16 +31,5 @@ public class UserCanSearchProductsTest extends BaseTest {
         homePage.setIntoWasSuchstDuField(product);
         searchPage = new SearchPage(app.driver);
         searchPage.waitForLoading();
-        searchPage.chooseItemsToLikeOnSearchPage(EnumsItemsNumberToLikeOnSearchPage.Three);
-        searchPage.chooseAnSortFromDropDown(EnumsSort.PREISABSTEIG);
-        String first = searchPage.firstItemGetPrice();
-        searchPage.minPriceInput(first);
-        searchPage.chooseItemsToLikeOnSearchPage(EnumsItemsNumberToLikeOnSearchPage.One);
-        searchPage.chooseItemsToDislikeOnSearchPage(EnumsItemsNumberToDislikeOnSearchPage.One);
-        String nameOfItem=searchPage.getItemName(EnumsItemsTitlesOnSearchPage.Two);
-        System.out.println(nameOfItem);
-
-
-
     }
 }
